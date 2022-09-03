@@ -1,0 +1,39 @@
+#!/bin/bash
+
+if [[  $# != 1 ]] # exit if cmd line args != 1
+then
+    echo "Usage: replspace <directory-name>"
+    exit 1
+fi
+
+if [ ! -d "$1" ]
+then
+    echo "ERROR: Directory $1 not found."
+    exit 1
+fi
+
+str=$1
+if [ ${str: -1} == "/" ]
+then
+    str=${str::-1}
+fi
+
+for entry in "$str"/*
+do
+    fsobj="$entry" # get the file system object (i.e file or directory)
+    newfsobj=$(echo $fsobj | tr ' ' _)
+
+    if [[ $fsobj == $newfsobj ]]
+    then
+        continue
+    fi
+
+    if [ -f "$newfsobj" ]
+    then
+        echo "Couldn't rename '$fsobj' to '$newfsobj' because '$newfsobj' already exists."
+        continue
+    fi
+
+    mv "$fsobj" $newfsobj
+    
+done
