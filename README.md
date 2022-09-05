@@ -23,6 +23,11 @@ Currently there is only one script:
 ```
 ./replspace Test/
 ```
-Add the script to `/usr/bin` or some other dir in your PATH to use it globally.
+To install this script, run the following from project root directory:
+```
+$ make changemod
+$ sudo make install
+```
+This should install the script to `/usr/bin`.
 
 Note: This script currently does not work recursively. I'll make updates in the future. Contributors are welcome.
