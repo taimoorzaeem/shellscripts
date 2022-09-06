@@ -28,7 +28,7 @@ do
         continue
     fi
 
-    if [ -f "$newfsobj" ]
+    if [ -f "$newfsobj" ] || [ -d "$newfsobj" ]
     then
         echo "Couldn't rename '$fsobj' to '$newfsobj' because '$newfsobj' already exists."
         continue
