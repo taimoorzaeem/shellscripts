@@ -5,3 +5,6 @@ changemod:
 
 install:
 	install src/replspace $(DESTDIR)
+
+uninstall:
+	rm -f $(DESTDIR)/replspace
