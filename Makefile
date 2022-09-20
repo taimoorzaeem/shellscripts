@@ -1,4 +1,4 @@
-DESTDIR="/usr/bin"
+DESTDIR=/usr/bin
 
 changemod:
 	chmod u+x src/replspace

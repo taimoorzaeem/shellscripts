@@ -30,4 +30,9 @@ $ sudo make install
 ```
 This should install the script to `/usr/bin`.
 
-Note: This script currently does not work recursively. I'll make updates in the future. Contributors are welcome.
+To uninstall this script:
+```
+$ sudo make uninstall
+```
+
+Note: This script currently does not work recursively. I'll make updates in the future.
